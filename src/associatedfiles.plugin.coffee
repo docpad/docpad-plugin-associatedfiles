@@ -27,7 +27,7 @@ module.exports = (BasePlugin) ->
 				documentAssociatedFilesPath = @get('associatedFilesPath') or @get('basename')
 				documentAssociatedFilesPathNormalized = @getPath(documentAssociatedFilesPath, associatedFilesPath)
 				unless documentAssociatedFilesPathNormalized.slice(-1) in ['\\','/']
-					documentAssociatedFilesPathNormalized += '/'
+					documentAssociatedFilesPathNormalized += pathUtil.sep
 				return documentAssociatedFilesPathNormalized
 			DocumentModel::getAssociatedFiles = (sorting,paging) ->
 				# Prepare
