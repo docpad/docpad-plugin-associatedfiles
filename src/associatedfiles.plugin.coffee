@@ -8,6 +8,8 @@ module.exports = (BasePlugin) ->
 		# Plugin config
 		config:
 			associatedFilesPath: 'associated-files'
+			sorting: null  # [name:1, date:-1]
+			paging: null  # {limit: 1}
 
 		# DocPad is ready now
 		# Lets use this time to extend our file model
@@ -15,6 +17,7 @@ module.exports = (BasePlugin) ->
 			# Prepare
 			{docpad} = opts
 			{DocumentModel} = docpad
+			config = @config
 			pathUtil = require('path')
 			fsUtil = require('fs')
 
@@ -33,7 +36,8 @@ module.exports = (BasePlugin) ->
 				# Prepare
 				document = @
 				documentAssociatedFilesPath = document.getAssociatedFilesPath()
-				sorting ?= [name:1, date:-1]
+				sorting ?= config.sorting or [name:1, date:-1]
+				paging ?= config.paging or null
 
 				# Fetch our associated files, and cache
 				associatedFilesCollection = docpad.getFilesAtPath(documentAssociatedFilesPath, sorting, paging)
