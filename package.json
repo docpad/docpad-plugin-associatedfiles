@@ -12,11 +12,11 @@
 	],
 	"author": "Bevry Pty Ltd <us@bevry.me> (http://bevry.me)",
 	"maintainers": [
-		"Benjamin Lupton <b@lupton.cc> (http://balupton.com)"
+		"Benjamin Lupton <b@lupton.cc> (https://github.com/balupton)"
 	],
 	"contributors": [
-		"Morgan Sutherland <morgan@msutherl.net> http://msutherl.net",
-		"Benjamin Lupton <b@lupton.cc> (http://balupton.com)",
+		"Morgan Sutherland <morgan@msutherl.net> (https://github.com/msutherl)",
+		"Benjamin Lupton <b@lupton.cc> (https://github.com/balupton)",
 		"jonathanh32 (https://github.com/jonathanh32)"
 	],
 	"bugs": {
