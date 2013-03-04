@@ -27,7 +27,7 @@ title: My Holiday in 2012
 
 <h2>Here are some great photos from our trip</h2>
 
-<% for file in @getDocument().getAssociatedFiles(): %>
+<% for file in @getDocument().getAssociatedFiles().toJSON(): %>
 <p>
 	<h3><%= file.title or file.name %></h3>
 	<img src="<%= file.url %>" title="<%= file.title or file.name %>" />
