@@ -8,6 +8,7 @@ module.exports = (BasePlugin) ->
 		# Plugin config
 		config:
 			associatedFilesPath: 'associated-files'
+			useRelativeBase: false
 			sorting: null  # [name:1, date:-1]
 			paging: null  # {limit: 1}
 
@@ -27,7 +28,8 @@ module.exports = (BasePlugin) ->
 
 			# Extend our prototype
 			DocumentModel::getAssociatedFilesPath = ->
-				documentAssociatedFilesPath = @get('associatedFilesPath') or @get('basename')
+				documentBase = if config.useRelativeBase then @get('relativeBase') else @get('basename')
+				documentAssociatedFilesPath = @get('associatedFilesPath') or documentBase
 				documentAssociatedFilesPathNormalized = @getPath(documentAssociatedFilesPath, associatedFilesPath)
 				unless documentAssociatedFilesPathNormalized.slice(-1) in ['\\','/']
 					documentAssociatedFilesPathNormalized += pathUtil.sep
