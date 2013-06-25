@@ -60,13 +60,19 @@ Then we will stick a few images inside our path: `src/files/associated-files/my-
 Ins't that cool?
 
 
+
 ## History
-You can discover the history inside the `History.md` file
+[You can discover the history inside the `History.md` file](https://github.com/bevry/docpad-plugin-associatedfiles/blob/master/History.md#files)
+
+
+## Contributing
+[You can discover the contributing instructions inside the `Contributing.md` file](https://github.com/bevry/docpad-plugin-associatedfiles/blob/master/Contributing.md#files)
 
 
 ## License
 Licensed under the incredibly [permissive](http://en.wikipedia.org/wiki/Permissive_free_software_licence) [MIT License](http://creativecommons.org/licenses/MIT/)
-<br/>Copyright &copy; 2012+ [Bevry Pty Ltd](http://bevry.me)
+<br/>Copyright &copy; 2012+ [Bevry Pty Ltd](http://bevry.me) <us@bevry.me>
+
 
 ## Contributors
 - [Benjamin Lupton](http://balupton.com)
