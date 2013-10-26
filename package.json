@@ -1,41 +1,43 @@
 {
-	"name": "docpad-plugin-associatedfiles",
-	"version": "2.1.4",
-	"description": "DocPad plugin that fetches any associated files for our particular document",
-	"homepage": "http://docpad.org/plugin/associatedfiles",
-	"keywords": [
-		"docpad",
-		"docpad-plugin",
-		"associations",
-		"associated",
-		"files"
-	],
-	"author": "Bevry Pty Ltd <us@bevry.me> (http://bevry.me)",
-	"maintainers": [
-		"Benjamin Lupton <b@lupton.cc> (https://github.com/balupton)"
-	],
-	"contributors": [
-		"Morgan Sutherland <morgan@msutherl.net> (https://github.com/msutherl)",
-		"Benjamin Lupton <b@lupton.cc> (https://github.com/balupton)",
-		"jonathanh32 (https://github.com/jonathanh32)"
-	],
-	"bugs": {
-		"url": "http://docpad.org/plugin/associatedfiles/issues"
-	},
-	"repository" : {
-		"type": "git",
-		"url": "https://github.com/docpad/docpad-plugin-associatedfiles.git"
-	},
-	"engines" : {
-		"node": ">=0.4",
-		"docpad": ">=6.1 <7"
-	},
-	"devDependencies": {
-		"coffee-script": "~1.6.2",
-		"docpad": ">=6.37 <7"
-	},
-	"main": "./out/associatedfiles.plugin.js",
-	"scripts": {
-		"test": "node ./test/associatedfiles.test.js"
-	}
+  "name": "docpad-plugin-associatedfiles",
+  "version": "2.1.4",
+  "description": "DocPad plugin that fetches any associated files for our particular document",
+  "homepage": "http://docpad.org/plugin/associatedfiles",
+  "keywords": [
+    "docpad",
+    "docpad-plugin",
+    "associations",
+    "associated",
+    "files"
+  ],
+  "author": "Bevry Pty Ltd <us@bevry.me> (http://bevry.me)",
+  "maintainers": [
+    "Benjamin Lupton <b@lupton.cc> (https://github.com/balupton)"
+  ],
+  "contributors": [
+    "Morgan Sutherland <morgan@msutherl.net> (https://github.com/msutherl)",
+    "Benjamin Lupton <b@lupton.cc> (https://github.com/balupton)",
+    "jonathanh32 (https://github.com/jonathanh32)"
+  ],
+  "bugs": {
+    "url": "http://docpad.org/plugin/associatedfiles/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/docpad/docpad-plugin-associatedfiles.git"
+  },
+  "engines": {
+    "node": ">=0.4",
+    "docpad": ">=6.1 <7"
+  },
+  "devDependencies": {
+    "coffee-script": "~1.6.2"
+  },
+  "main": "./out/associatedfiles.plugin.js",
+  "scripts": {
+    "test": "node ./test/associatedfiles.test.js"
+  },
+  "peerDependencies": {
+    "docpad": "6"
+  }
 }
