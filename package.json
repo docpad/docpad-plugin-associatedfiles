@@ -37,6 +37,6 @@
     "test": "node ./test/associatedfiles.test.js"
   },
   "peerDependencies": {
-    "docpad": "6"
+    "docpad": ">=6.1 <7"
   }
 }
