@@ -15,12 +15,12 @@
     "Benjamin Lupton <b@lupton.cc> (https://github.com/balupton)"
   ],
   "contributors": [
-    "Morgan Sutherland <morgan@msutherl.net> (https://github.com/msutherl)",
     "Benjamin Lupton <b@lupton.cc> (https://github.com/balupton)",
-    "jonathanh32 (https://github.com/jonathanh32)"
+    "jonathanh32 (https://github.com/jonathanh32)",
+    "Morgan Sutherland <morgan@msutherl.net> (https://github.com/msutherl)"
   ],
   "bugs": {
-    "url": "http://docpad.org/plugin/associatedfiles/issues"
+    "url": "https://github.com/docpad/docpad-plugin-associatedfiles/issues"
   },
   "repository": {
     "type": "git",
@@ -30,7 +30,9 @@
     "node": ">=0.4"
   },
   "devDependencies": {
-    "coffee-script": "~1.6.2"
+    "coffee-script": "~1.6.2",
+    "docpad": ">=6.1 <7",
+    "projectz": "~0.3.9"
   },
   "main": "./out/associatedfiles.plugin.js",
   "scripts": {
@@ -38,5 +40,18 @@
   },
   "peerDependencies": {
     "docpad": ">=6.1 <7"
+  },
+  "badges": {
+    "travis": true,
+    "npm": true,
+    "david": true,
+    "daviddev": true,
+    "gittip": "docpad",
+    "flattr": "344188/balupton-on-Flattr",
+    "paypal": "QB8GQPZAH84N6",
+    "bitcoin": "https://coinbase.com/checkouts/9ef59f5479eec1d97d63382c9ebcb93a"
+  },
+  "license": {
+    "type": "MIT"
   }
 }
