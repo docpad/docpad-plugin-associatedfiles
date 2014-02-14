@@ -1,0 +1,5 @@
+---
+associatedFilesRelative: true
+---
+
+<%- JSON.stringify @getDocument().getAssociatedFiles().pluck('filename') %>

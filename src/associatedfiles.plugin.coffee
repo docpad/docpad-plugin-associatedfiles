@@ -28,8 +28,13 @@ module.exports = (BasePlugin) ->
 
 			# Extend our prototype
 			DocumentModel::getAssociatedFilesPath = ->
-				documentBase = if config.useRelativeBase then @get('relativeBase') else @get('basename')
+				# Retrieve the document base name, minding relative paths.
+				documentBase = if config.useRelativeBase or @get('associatedFilesRelative') then @get('relativeBase') else @get('basename')
+
+				# Find the associated files path for the document.
 				documentAssociatedFilesPath = @get('associatedFilesPath') or documentBase
+
+				# Get the clean path for the associated files.
 				documentAssociatedFilesPathNormalized = @getPath(documentAssociatedFilesPath, associatedFilesPath)
 				unless documentAssociatedFilesPathNormalized.slice(-1) in ['\\','/']
 					documentAssociatedFilesPathNormalized += pathUtil.sep
