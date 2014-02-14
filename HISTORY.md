@@ -1,5 +1,9 @@
 ## History
 
+- v2.2.0 February 14th, 2014
+	- Added `useRelativeBase` to allow for relative directory paths from the associated files path
+		- Closes [pull request #5](https://github.com/docpad/docpad-plugin-associatedfiles/pull/5) and [pull request #4](https://github.com/docpad/docpad-plugin-associatedfiles/pull/4) thanks to [rantecki](https://github.com/rantecki) and [takitapart](https://github.com/takitapart)
+
 - v2.1.5 February 8th, 2014
 	- Update dependencies
 
