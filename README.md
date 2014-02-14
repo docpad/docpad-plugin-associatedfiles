@@ -32,7 +32,7 @@ docpad install associatedfiles
 
 ## Usage
 
-The way it works is by looking into `src/files/associated-files/#{document.associatedFilesDirectory or document.basename}` for files. Where `associatedFilesDirectory` is set in your document's meta data, and if it doesn't exist it will use the document's basename (e.g. the basename of `my-holiday-2012.html.eco` is `my-holiday-2012`). Any files inside that path will be associated to your document, and retrieveable by `@getDocument().getAssociatedFiles()`
+The way it works is by looking into `src/files/associated-files/#{document.associatedFilesPath or document.basename}` for files. Where `associatedFilesPath` is set in your document's meta data, and if it doesn't exist it will use the document's basename (e.g. the basename of `my-holiday-2012.html.eco` is `my-holiday-2012`). Any files inside that path will be associated to your document, and retrieveable by `@getDocument().getAssociatedFiles()`
 
 Lets see how this works, we have the document `src/documents/my-holiday-2012.html.eco`:
 
