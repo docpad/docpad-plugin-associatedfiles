@@ -1,6 +1,6 @@
 {
   "name": "docpad-plugin-associatedfiles",
-  "version": "2.1.5",
+  "version": "2.2.0",
   "description": "DocPad plugin that fetches any associated files for our particular document",
   "homepage": "http://docpad.org/plugin/associatedfiles",
   "keywords": [
@@ -17,7 +17,9 @@
   "contributors": [
     "Benjamin Lupton <b@lupton.cc> (https://github.com/balupton)",
     "jonathanh32 (https://github.com/jonathanh32)",
-    "Morgan Sutherland <morgan@msutherl.net> (https://github.com/msutherl)"
+    "Morgan Sutherland <morgan@msutherl.net> (https://github.com/msutherl)",
+    "RobLoach (https://github.com/RobLoach)",
+    "takitapart (https://github.com/takitapart)"
   ],
   "bugs": {
     "url": "https://github.com/docpad/docpad-plugin-associatedfiles/issues"
@@ -49,7 +51,8 @@
     "gittip": "docpad",
     "flattr": "344188/balupton-on-Flattr",
     "paypal": "QB8GQPZAH84N6",
-    "bitcoin": "https://coinbase.com/checkouts/9ef59f5479eec1d97d63382c9ebcb93a"
+    "bitcoin": "https://coinbase.com/checkouts/9ef59f5479eec1d97d63382c9ebcb93a",
+    "wishlist": "http://amzn.com/w/2F8TXKSNAFG4V"
   },
   "license": {
     "type": "MIT"
