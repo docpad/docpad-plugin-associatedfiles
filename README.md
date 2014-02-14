@@ -66,7 +66,42 @@ Then we will stick a few images inside our path: `src/files/associated-files/my-
 </p>
 ```
 
-Ins't that cool?
+
+## Configure
+
+### Defaults
+
+The default configuration for this plugin is the equivalant of adding the following options to your [DocPad configuration file](http://docpad.org/docs/config):
+
+``` coffee
+plugins:
+	associatedfiles:
+		# The paths for the associated files.
+		associatedFilesPath: 'associated-files'
+
+		# Whether to use relative base paths for the document. This would
+		# use associated-files/subfolder/myarticle/image.jpg instead of
+		# associated-files/myarticle/image.jpg.
+		useRelativeBase: false
+```
+
+### Template Configuration
+
+It is possible to override the default configuration on a per-template basis:
+
+``` html
+---
+associatedFilesRelative: true
+associatedFilesPath: './myfolder'
+---
+
+<% for file in @getDocument().getAssociatedFiles().toJSON(): %>
+<p>
+	<h3><%= file.title or file.name %></h3>
+	<img src="<%= file.url %>" title="<%= file.title or file.name %>" />
+</p>
+<% end %>
+```
 
 
 <!-- HISTORY/ -->
