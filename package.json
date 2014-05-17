@@ -34,7 +34,7 @@
   "devDependencies": {
     "coffee-script": "~1.7.1",
     "docpad": ">=6.37 <7",
-    "projectz": "~0.3.10"
+    "projectz": "~0.3.11"
   },
   "main": "./out/associatedfiles.plugin.js",
   "scripts": {
@@ -56,5 +56,8 @@
   },
   "license": {
     "type": "MIT"
+  },
+  "cakeConfiguration": {
+    "COFFEE_SRC_PATH": "src"
   }
 }
