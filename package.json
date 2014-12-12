@@ -32,7 +32,7 @@
     "node": ">=0.4"
   },
   "devDependencies": {
-    "coffee-script": "~1.7.1",
+    "coffee-script": "~1.8.0",
     "docpad": ">=6.37 <7",
     "projectz": "~0.3.17"
   },
@@ -60,5 +60,6 @@
   },
   "cakeConfiguration": {
     "COFFEE_SRC_PATH": "src"
-  }
+  },
+  "dependencies": {}
 }
