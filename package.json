@@ -1,4 +1,21 @@
 {
+  "engines": {
+    "node": ">=0.4"
+  },
+  "dependencies": {},
+  "peerDependencies": {
+    "docpad": "6"
+  },
+  "devDependencies": {
+    "coffee-script": "^1.9.1",
+    "docpad": "6",
+    "projectz": "^1.1.0"
+  },
+  "scripts": {
+    "test": "node ./out/associatedfiles.test.js",
+    "our:compile": "coffee -bco ./out ./src",
+    "our:meta:projectz": "projectz compile"
+  },
   "name": "docpad-plugin-associatedfiles",
   "version": "2.2.0",
   "description": "DocPad plugin that fetches any associated files for our particular document",
@@ -12,14 +29,14 @@
   ],
   "author": "Bevry Pty Ltd <us@bevry.me> (http://bevry.me)",
   "maintainers": [
-    "Benjamin Lupton <b@lupton.cc> (https://github.com/balupton)"
+    "Benjamin Lupton <b@lupton.cc> (http://balupton.com)"
   ],
   "contributors": [
-    "Benjamin Lupton <b@lupton.cc> (https://github.com/balupton)",
-    "jonathanh32 (https://github.com/jonathanh32)",
+    "Benjamin Lupton <b@lupton.cc> (http://balupton.com)",
+    "Jonathan Hughes (https://github.com/jonathanh32)",
     "Morgan Sutherland <morgan@msutherl.net> (https://github.com/msutherl)",
-    "RobLoach (https://github.com/RobLoach)",
-    "takitapart (https://github.com/takitapart)"
+    "Rob Loach <robloach@gmail.com> (http://robloach.net)",
+    "Bob VanderClay (http://takitapart.com)"
   ],
   "bugs": {
     "url": "https://github.com/docpad/docpad-plugin-associatedfiles/issues"
@@ -28,38 +45,38 @@
     "type": "git",
     "url": "https://github.com/docpad/docpad-plugin-associatedfiles.git"
   },
-  "engines": {
-    "node": ">=0.4"
-  },
-  "devDependencies": {
-    "coffee-script": "^1.9.1",
-    "docpad": ">=6.37 <7",
-    "projectz": "^0.5.0"
-  },
   "main": "./out/associatedfiles.plugin.js",
-  "scripts": {
-    "test": "node ./out/associatedfiles.test.js"
-  },
-  "peerDependencies": {
-    "docpad": ">=6.37 <7"
-  },
   "badges": {
-    "travis": true,
-    "npm": true,
-    "npmdownloads": true,
-    "david": true,
-    "daviddev": true,
-    "gratipay": "docpad",
-    "flattr": "344188/balupton-on-Flattr",
-    "paypal": "QB8GQPZAH84N6",
-    "bitcoin": "https://coinbase.com/checkouts/9ef59f5479eec1d97d63382c9ebcb93a",
-    "wishlist": "http://amzn.com/w/2F8TXKSNAFG4V"
+    "list": [
+      "travisci",
+      "npmversion",
+      "npmdownloads",
+      "daviddm",
+      "daviddmdev",
+      "---",
+      "patreon",
+      "opencollective",
+      "gratipay",
+      "flattr",
+      "paypal",
+      "bitcoin",
+      "wishlist",
+      "---",
+      "slackin"
+    ],
+    "config": {
+      "patreonUsername": "bevry",
+      "opencollectiveUsername": "bevry",
+      "gratipayUsername": "bevry",
+      "flattrUsername": "balupton",
+      "paypalURL": "https://bevry.me/paypal",
+      "bitcoinURL": "https://bevry.me/bitcoin",
+      "wishlistURL": "https://bevry.me/wishlist",
+      "slackinURL": "https://slack.bevry.me"
+    }
   },
-  "license": {
-    "type": "MIT"
-  },
+  "license": "MIT",
   "cakeConfiguration": {
     "COFFEE_SRC_PATH": "src"
-  },
-  "dependencies": {}
+  }
 }
