@@ -1,25 +1,9 @@
 {
-  "engines": {
-    "node": ">=0.4"
-  },
-  "dependencies": {},
-  "peerDependencies": {
-    "docpad": "6"
-  },
-  "devDependencies": {
-    "coffee-script": "^1.9.1",
-    "docpad": "6",
-    "projectz": "^1.1.0"
-  },
-  "scripts": {
-    "test": "node ./out/associatedfiles.test.js",
-    "our:compile": "coffee -bco ./out ./src",
-    "our:meta:projectz": "projectz compile"
-  },
   "name": "docpad-plugin-associatedfiles",
   "version": "2.2.0",
   "description": "DocPad plugin that fetches any associated files for our particular document",
-  "homepage": "http://docpad.org/plugin/associatedfiles",
+  "homepage": "https://github.com/docpad/docpad-plugin-associatedfiles",
+  "license": "MIT",
   "keywords": [
     "docpad",
     "docpad-plugin",
@@ -27,25 +11,6 @@
     "associated",
     "files"
   ],
-  "author": "Bevry Pty Ltd <us@bevry.me> (http://bevry.me)",
-  "maintainers": [
-    "Benjamin Lupton <b@lupton.cc> (http://balupton.com)"
-  ],
-  "contributors": [
-    "Benjamin Lupton <b@lupton.cc> (http://balupton.com)",
-    "Jonathan Hughes (https://github.com/jonathanh32)",
-    "Morgan Sutherland <morgan@msutherl.net> (https://github.com/msutherl)",
-    "Rob Loach <robloach@gmail.com> (http://robloach.net)",
-    "Bob VanderClay (http://takitapart.com)"
-  ],
-  "bugs": {
-    "url": "https://github.com/docpad/docpad-plugin-associatedfiles/issues"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/docpad/docpad-plugin-associatedfiles.git"
-  },
-  "main": "./out/associatedfiles.plugin.js",
   "badges": {
     "list": [
       "travisci",
@@ -75,8 +40,78 @@
       "slackinURL": "https://slack.bevry.me"
     }
   },
-  "license": "MIT",
-  "cakeConfiguration": {
-    "COFFEE_SRC_PATH": "src"
+  "author": "Bevry Pty Ltd <us@bevry.me> (http://bevry.me)",
+  "maintainers": [
+    "Benjamin Lupton <b@lupton.cc> (http://balupton.com)"
+  ],
+  "contributors": [
+    "Benjamin Lupton <b@lupton.cc> (http://balupton.com)",
+    "Jonathan Hughes (https://github.com/jonathanh32)",
+    "Morgan Sutherland <morgan@msutherl.net> (https://github.com/msutherl)",
+    "Rob Loach <robloach@gmail.com> (http://robloach.net)",
+    "Bob VanderClay (http://takitapart.com)"
+  ],
+  "bugs": {
+    "url": "https://github.com/docpad/docpad-plugin-associatedfiles/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/docpad/docpad-plugin-associatedfiles.git"
+  },
+  "engines": {
+    "node": ">=0.12"
+  },
+  "editions": [
+    {
+      "description": "Source + CoffeeScript + Require",
+      "directory": "source",
+      "entry": "associatedfiles.plugin.coffee",
+      "syntaxes": [
+        "coffeescript",
+        "require"
+      ]
+    },
+    {
+      "description": "CoffeeScript Compiled + ES5 + Require",
+      "directory": "es5",
+      "entry": "associatedfiles.plugin.js",
+      "syntaxes": [
+        "javascript",
+        "es5",
+        "require"
+      ]
+    }
+  ],
+  "main": "es5/associatedfiles.plugin.js",
+  "dependencies": {},
+  "devDependencies": {
+    "coffee-script": "^1.12.4",
+    "coffeelint": "^1.16.0",
+    "docpad": "^6.79.4",
+    "projectz": "^1.3.2"
+  },
+  "peerDependencies": {
+    "docpad": "6"
+  },
+  "scripts": {
+    "our:setup": "npm run our:setup:npm && npm run our:setup:docpad",
+    "our:setup:npm": "npm install",
+    "our:setup:docpad": "bash ./docpad-setup.sh",
+    "our:clean": "rm -Rf ./docs ./es2015 ./es5 ./out",
+    "our:compile": "npm run our:compile:coffee",
+    "our:compile:coffee": "coffee -bco ./es5 ./source",
+    "our:meta": "npm run our:meta:projectz",
+    "our:meta:projectz": "projectz compile",
+    "our:verify": "npm run our:verify:coffeelint",
+    "our:verify:coffeelint": "coffeelint ./source",
+    "our:test": "npm run our:verify && npm test",
+    "our:release": "npm run our:release:prepare && npm run our:release:check && npm run our:release:tag && npm run our:release:push",
+    "our:release:prepare": "npm run our:clean && npm run our:compile && npm run our:test && npm run our:meta",
+    "our:release:check": "npm run our:release:check:changelog && npm run our:release:check:dirty",
+    "our:release:check:changelog": "cat ./HISTORY.md | grep v$npm_package_version || (echo add a changelog entry for v$npm_package_version && exit -1)",
+    "our:release:check:dirty": "git diff --exit-code",
+    "our:release:tag": "export MESSAGE=$(cat ./HISTORY.md | sed -n \"/## v$npm_package_version/,/##/p\" | sed 's/## //' | awk 'NR>1{print buf}{buf = $0}') && test \"$MESSAGE\" || (echo 'proper changelog entry not found' && exit -1) && git tag v$npm_package_version -am \"$MESSAGE\"",
+    "our:release:push": "git push origin master && git push origin --tags",
+    "test": "node --harmony es5/associatedfiles.test.js --joe-reporter=console"
   }
 }
