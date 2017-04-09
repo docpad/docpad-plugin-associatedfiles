@@ -1,6 +1,6 @@
 {
   "name": "docpad-plugin-associatedfiles",
-  "version": "2.2.0",
+  "version": "2.3.0",
   "description": "DocPad plugin that fetches any associated files for our particular document",
   "homepage": "https://github.com/docpad/docpad-plugin-associatedfiles",
   "license": "MIT",
