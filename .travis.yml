@@ -1,25 +1,32 @@
 sudo: false
 language: node_js
 node_js:
+- '0.8'
+- '0.10'
 - '0.12'
 - '4'
 - '6'
-- '7'
+- '8'
+- '9'
 matrix:
   fast_finish: true
+  allow_failures:
+  - node_js: '0.8'
+  - node_js: '0.10'
+  - node_js: '9'
 cache:
   directories:
   - "$HOME/.npm"
   - "$HOME/.yarn-cache"
 install:
-- eval "$(curl -s https://raw.githubusercontent.com/balupton/awesome-travis/master/scripts/node-install.bash)"
+- eval "$(curl -s https://raw.githubusercontent.com/bevry/awesome-travis/ef794235b7094de5e49fb64e226da032ce135ecd/scripts/node-install.bash)"
 before_script:
-- eval "$(curl -s https://raw.githubusercontent.com/balupton/awesome-travis/master/scripts/node-verify.bash)"
+- eval "$(curl -s https://raw.githubusercontent.com/bevry/awesome-travis/ef794235b7094de5e49fb64e226da032ce135ecd/scripts/node-verify.bash)"
 after_success:
-- eval "$(curl -s https://raw.githubusercontent.com/balupton/awesome-travis/master/scripts/node-publish.bash)"
+- eval "$(curl -s https://raw.githubusercontent.com/bevry/awesome-travis/ef794235b7094de5e49fb64e226da032ce135ecd/scripts/node-publish.bash)"
 notifications:
   slack:
-    secure: Kknbo+hTq34Qh3NZtqRuAgQgh+n/hhwj97zld2jNE+Fmdke/8mf5FqudGu4jlZzX5VGg4ByxdMlzNdTJMOvzE20L7EmYxAhBuvnyH9fJDpzbbA/z6Kxqxr4xsFdT8Gcn6HRXtgbQ1rCePhBMwNh29muVr//MRE1fp9nx7pvt0oY=
+    secure: o/atMzwB/qDDDkgrxdSRWBACTy11ntxiv1pLrGqh0n76osld+/jZQJutaEOPD9IwCb9fZnZbfzDBN46miC5lok+qVTpPthoNM9E2HR6t9BCd3s1qEtUI+zesg0i9JPxLpczNAhBg3+ELc/o/WBxBbICf2EPHsDQiv9Nn1+mVgWE=
   email:
     recipients:
-      secure: GVkX5mi+Hk97yWyUtnpFxKmBMzyeJGJAAShN61rz/cZ0q9TUEASofUo44fRWhyldFXaRZ6lyOfbT4F4a/sF0AIlhcuQzzPumLwcQkmWHeUPTFOwO6UF3zT+ENM8e33dy2f5Ce17DjkPsfpWGU588os8SZt4MsO5UeoSKLVtYAYQ=
+      secure: pIbsgqd89nlOmBFAMSrYNjRnRql0iXXi7hVCpusoz7rHAPOjjC15BxNLLeEKBL0rRAhvvdNYq/dB9TIV3vPQrWZM9V5T+oK4vMwVEgn9ufjwoMJ7T4N/ds3Xuv7qSzRBHkLDkTbwGb5km+/DjTPiGro6NfHnXh8z2jMm1b8KSFw=
