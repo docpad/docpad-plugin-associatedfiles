@@ -65,7 +65,7 @@
     {
       "description": "Source + CoffeeScript + Require",
       "directory": "source",
-      "entry": "index.coffee",
+      "entry": "associatedfiles.plugin.coffee",
       "syntaxes": [
         "coffeescript",
         "require"
@@ -74,7 +74,7 @@
     {
       "description": "CoffeeScript Compiled + ESNext + Require",
       "directory": "esnext",
-      "entry": "index.js",
+      "entry": "associatedfiles.plugin.js",
       "syntaxes": [
         "javascript",
         "esnext",
@@ -84,7 +84,7 @@
     {
       "description": "CoffeeScript Compiled + ES2015 + Require",
       "directory": "es2015",
-      "entry": "index.js",
+      "entry": "associatedfiles.plugin.js",
       "syntaxes": [
         "javascript",
         "es2015",
