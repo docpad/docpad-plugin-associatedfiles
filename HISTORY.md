@@ -1,5 +1,8 @@
 # History
 
+## v2.5.0 2018 February 7
+- Updated base files
+
 ## v2.4.0 2018 February 7
 - Updated base files
 
