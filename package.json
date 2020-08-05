@@ -1,15 +1,18 @@
 {
   "name": "docpad-plugin-associatedfiles",
-  "version": "2.5.0",
+  "version": "2.6.0",
   "description": "DocPad plugin that fetches any associated files for our particular document",
   "homepage": "https://github.com/docpad/docpad-plugin-associatedfiles",
   "license": "MIT",
   "keywords": [
+    "associated",
+    "associations",
+    "coffeescript",
     "docpad",
     "docpad-plugin",
-    "associations",
-    "associated",
-    "files"
+    "esnext",
+    "files",
+    "node"
   ],
   "badges": {
     "list": [
@@ -19,37 +22,45 @@
       "daviddm",
       "daviddmdev",
       "---",
+      "githubsponsors",
       "patreon",
-      "opencollective",
-      "gratipay",
       "flattr",
+      "liberapay",
+      "buymeacoffee",
+      "opencollective",
+      "crypto",
       "paypal",
-      "bitcoin",
-      "wishlist",
-      "---",
-      "slackin"
+      "wishlist"
     ],
     "config": {
-      "patreonUsername": "bevry",
-      "opencollectiveUsername": "bevry",
-      "gratipayUsername": "bevry",
+      "githubSponsorsUsername": "balupton",
+      "buymeacoffeeUsername": "balupton",
+      "cryptoURL": "https://bevry.me/crypto",
       "flattrUsername": "balupton",
+      "liberapayUsername": "bevry",
+      "opencollectiveUsername": "bevry",
+      "patreonUsername": "bevry",
       "paypalURL": "https://bevry.me/paypal",
-      "bitcoinURL": "https://bevry.me/bitcoin",
       "wishlistURL": "https://bevry.me/wishlist",
-      "slackinURL": "https://slack.bevry.me"
+      "travisTLD": "com",
+      "githubUsername": "docpad",
+      "githubRepository": "docpad-plugin-associatedfiles",
+      "githubSlug": "docpad/docpad-plugin-associatedfiles",
+      "npmPackageName": "docpad-plugin-associatedfiles"
     }
   },
+  "funding": "https://bevry.me/fund",
   "author": "Bevry Pty Ltd <us@bevry.me> (http://bevry.me)",
   "maintainers": [
-    "Benjamin Lupton <b@lupton.cc> (http://balupton.com)"
+    "Benjamin Lupton <b@lupton.cc> (https://github.com/balupton)"
   ],
   "contributors": [
-    "Benjamin Lupton <b@lupton.cc> (http://balupton.com)",
+    "Benjamin Lupton <b@lupton.cc> (https://github.com/balupton)",
+    "Bob VanderClay (http://takitapart.com)",
+    "Bob VanderClay (https://github.com/bobvanderclay)",
     "Jonathan Hughes (https://github.com/jonathanh32)",
     "Morgan Sutherland <morgan@msutherl.net> (https://github.com/msutherl)",
-    "Rob Loach <robloach@gmail.com> (http://robloach.net)",
-    "Bob VanderClay (http://takitapart.com)"
+    "Rob Loach <robloach@gmail.com> (https://github.com/RobLoach)"
   ],
   "bugs": {
     "url": "https://github.com/docpad/docpad-plugin-associatedfiles/issues"
@@ -59,74 +70,72 @@
     "url": "https://github.com/docpad/docpad-plugin-associatedfiles.git"
   },
   "engines": {
-    "node": ">=0.12"
+    "node": ">=10"
   },
   "editions": [
     {
-      "description": "Source + CoffeeScript + Require",
+      "description": "ESNext source code for Node.js 10 || 12 || 13 || 14 with Require for modules",
       "directory": "source",
-      "entry": "associatedfiles.plugin.coffee",
-      "syntaxes": [
-        "coffeescript",
-        "require"
-      ]
-    },
-    {
-      "description": "CoffeeScript Compiled + ESNext + Require",
-      "directory": "esnext",
-      "entry": "associatedfiles.plugin.js",
-      "syntaxes": [
+      "entry": "index.js",
+      "tags": [
         "javascript",
         "esnext",
         "require"
-      ]
-    },
-    {
-      "description": "CoffeeScript Compiled + ES2015 + Require",
-      "directory": "es2015",
-      "entry": "associatedfiles.plugin.js",
-      "syntaxes": [
-        "javascript",
-        "es2015",
-        "require"
-      ]
+      ],
+      "engines": {
+        "node": "10 || 12 || 13 || 14"
+      }
     }
   ],
-  "main": "index.js",
+  "type": "commonjs",
+  "main": "source/index.js",
   "dependencies": {
-    "editions": "^1.3.4"
+    "docpad-baseplugin": "^1.4.0"
   },
   "devDependencies": {
-    "babel-core": "^6.26.0",
-    "babel-preset-es2015": "^6.24.1",
-    "coffeelint": "^2.0.7",
-    "coffeescript": "^2.2.1",
-    "docpad": "^6.79.4",
-    "projectz": "^1.4.0"
-  },
-  "peerDependencies": {
-    "docpad": "6"
+    "@bevry/update-contributors": "^1.15.0",
+    "coffeelint": "^2.1.0",
+    "coffeescript": "^2.5.1",
+    "docpad": "^6.83.1",
+    "docpad-plugintester": "^1.6.2",
+    "eslint": "^7.6.0",
+    "eslint-config-bevry": "^3.18.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "prettier": "^2.0.5",
+    "projectz": "^2.13.0",
+    "valid-directory": "^2.8.0"
   },
   "scripts": {
-    "our:setup": "npm run our:setup:npm && npm run our:setup:docpad",
-    "our:setup:npm": "npm install",
-    "our:setup:docpad": "bash ./docpad-setup.sh",
-    "our:clean": "rm -Rf ./docs ./es2015 ./es5 ./out",
-    "our:compile": "npm run our:compile:coffee:esnext && npm run our:compile:coffee:es2015",
-    "our:compile:coffee:esnext": "coffee -bco ./esnext ./source",
-    "our:compile:coffee:es2015": "coffee -bcto ./es2015 ./source",
-    "our:meta": "npm run our:meta:projectz",
+    "our:clean": "rm -Rf ./docs ./edition* ./es2015 ./es5 ./out ./.next",
+    "our:compile": "echo no need for this project",
+    "our:deploy": "echo no need for this project",
+    "our:meta": "npm run our:meta:contributors && npm run our:meta:projectz",
+    "our:meta:contributors": "update-contributors",
     "our:meta:projectz": "projectz compile",
-    "our:verify": "npm run our:verify:coffeelint",
-    "our:verify:coffeelint": "coffeelint ./source",
-    "our:test": "npm run our:verify && npm test",
-    "our:release": "npm run our:release:prepare && npm run our:release:check && npm run our:release:tag && npm run our:release:push",
+    "our:release": "npm run our:release:prepare && npm run our:release:check-changelog && npm run our:release:check-dirty && npm run our:release:tag && npm run our:release:push",
+    "our:release:check-changelog": "cat ./HISTORY.md | grep v$npm_package_version || (echo add a changelog entry for v$npm_package_version && exit -1)",
+    "our:release:check-dirty": "git diff --exit-code",
     "our:release:prepare": "npm run our:clean && npm run our:compile && npm run our:test && npm run our:meta",
-    "our:release:check": "npm run our:release:check:changelog && npm run our:release:check:dirty",
-    "our:release:check:changelog": "cat ./HISTORY.md | grep v$npm_package_version || (echo add a changelog entry for v$npm_package_version && exit -1)",
-    "our:release:check:dirty": "git diff --exit-code",
-    "our:release:tag": "export MESSAGE=$(cat ./HISTORY.md | sed -n \"/## v$npm_package_version/,/##/p\" | sed 's/## //' | awk 'NR>1{print buf}{buf = $0}') && test \"$MESSAGE\" || (echo 'proper changelog entry not found' && exit -1) && git tag v$npm_package_version -am \"$MESSAGE\"",
     "our:release:push": "git push origin master && git push origin --tags",
-    "test": "node --harmony ./test.js --joe-reporter=console"
+    "our:release:tag": "export MESSAGE=$(cat ./HISTORY.md | sed -n \"/## v$npm_package_version/,/##/p\" | sed 's/## //' | awk 'NR>1{print buf}{buf = $0}') && test \"$MESSAGE\" || (echo 'proper changelog entry not found' && exit -1) && git tag v$npm_package_version -am \"$MESSAGE\"",
+    "our:setup": "npm run our:setup:install",
+    "our:setup:install": "npm install",
+    "our:test": "npm run our:verify && npm test",
+    "our:verify": "npm run our:verify:coffeelint && npm run our:verify:directory && npm run our:verify:eslint && npm run our:verify:prettier",
+    "our:verify:coffeelint": "coffeelint ./source",
+    "our:verify:directory": "valid-directory",
+    "our:verify:eslint": "eslint --fix --ignore-pattern '**/*.d.ts' --ignore-pattern '**/vendor/' --ignore-pattern '**/node_modules/' --ext .mjs,.js,.jsx,.ts,.tsx ./source",
+    "our:verify:prettier": "prettier --write .",
+    "test": "docpad-plugintester"
+  },
+  "eslintConfig": {
+    "extends": [
+      "bevry"
+    ]
+  },
+  "prettier": {
+    "semi": false,
+    "singleQuote": true
   }
 }

@@ -1,8 +1,8 @@
 {
-	"name": "docpad-plugin-associatedfiles-testsite",
-	"version": "0.1.0",
-	"private": true,
-	"dependencies": {
-		"docpad-plugin-eco": "2"
-	}
+  "name": "docpad-plugin-associatedfiles-testsite",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "docpad-plugin-eco": "~2.5.0"
+  }
 }
