@@ -1,6 +1,6 @@
 {
   "name": "docpad-plugin-associatedfiles",
-  "version": "2.7.0",
+  "version": "2.8.0",
   "description": "DocPad plugin that fetches any associated files for our particular document",
   "homepage": "https://github.com/docpad/docpad-plugin-associatedfiles",
   "license": "MIT",
@@ -97,7 +97,7 @@
     "@bevry/update-contributors": "^1.17.0",
     "coffeelint": "^2.1.0",
     "coffeescript": "^2.5.1",
-    "docpad": "^6.83.1",
+    "docpad": "^6.83.2",
     "docpad-plugintester": "^1.7.3",
     "eslint": "^7.8.1",
     "eslint-config-bevry": "^3.22.0",
@@ -108,7 +108,7 @@
     "valid-directory": "^3.4.0"
   },
   "peerDependencies": {
-    "docpad": "^6.83.1"
+    "docpad": "^6.83.2"
   },
   "scripts": {
     "our:clean": "rm -Rf ./docs ./edition* ./es2015 ./es5 ./out ./.next",
